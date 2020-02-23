@@ -22,8 +22,8 @@ func TestDownload(t *testing.T) {
 
 		for _, p := range photos {
 			wg.Add(1)
-			println(p.pic_small)
-			go DownloadFile(&wg, uid, p.pic_small, p.pic_id+".jpg")
+			println(p.Pic_small)
+			go DownloadFile(&wg, uid, p.Pic_small, p.Pic_id+".jpg")
 
 		}
 

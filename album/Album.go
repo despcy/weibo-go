@@ -18,15 +18,15 @@ type AlbumClient struct {
 
 //cards->[1]->card_group->[1]->pics
 type PhotoInfo struct {
-	pic_small  string
-	pic_middle string
-	pic_big    string
-	pic_mw2000 string
-	photo_tag  int64
-	pic_id     string
-	video      string
-	pic_type   string
-	blog       *MBlog
+	Pic_small  string
+	Pic_middle string
+	Pic_big    string
+	Pic_mw2000 string
+	Photo_tag  int64
+	Pic_id     string
+	Video      string
+	Pic_type   string
+	Blog       *MBlog
 }
 
 type MBlog struct {
@@ -131,15 +131,15 @@ func (c *AlbumClient) processPhotoJson(body []byte) ([]*PhotoInfo, error) {
 			AuthorScreenName, err := jsonparser.GetString(value, "mblog", "user", "screen_name")
 			AuthorProfileImageURL, err := jsonparser.GetString(value, "mblog", "user", "profile_image_url")
 			photos[i] = &PhotoInfo{
-				pic_small:  pic_small,
-				pic_middle: pic_middle,
-				pic_big:    pic_big,
-				pic_mw2000: pic_mw2000,
-				photo_tag:  photo_tag,
-				pic_id:     pic_id,
-				video:      video,
-				pic_type:   pic_type,
-				blog: &MBlog{
+				Pic_small:  pic_small,
+				Pic_middle: pic_middle,
+				Pic_big:    pic_big,
+				Pic_mw2000: pic_mw2000,
+				Photo_tag:  photo_tag,
+				Pic_id:     pic_id,
+				Video:      video,
+				Pic_type:   pic_type,
+				Blog: &MBlog{
 					Id:                    Id,
 					Mid:                   Mid,
 					Text:                  Text,

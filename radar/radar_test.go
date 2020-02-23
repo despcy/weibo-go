@@ -16,12 +16,12 @@ func TestRadar(t *testing.T) {
 		}
 
 		for _, user := range users {
-			info, err := RequestUserInfo(user.id)
+			info, err := RequestUserInfo(user.Id)
 			if err != nil {
 				println(err.Error())
 				break
 			}
-			s := string(info.screen_name + " https://weibo.com/" + info.id + " " + info.gender + " " + info.created_at)
+			s := string(info.Screen_name + " https://weibo.com/" + info.Id + " " + info.Gender + " " + info.Created_at)
 
 			println(s)
 

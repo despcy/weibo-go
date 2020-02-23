@@ -12,39 +12,39 @@ import (
 )
 
 type User struct {
-	lat               string
-	lon               string
-	id                string //   cards[0]->card_group[i]->user->id
-	screen_name       string // cards[0]->card_group[i]->user->screen_name
-	profile_image_url string // cards[0]->card_group[i]->user->pro..
-	avatar_large      string // cards[0]->card_group[i]->user->ava...
-	verified          bool   // cards[0]->card_group[i]->user->v
-	desc1             string //    cards[0]->card_group[i]->desc1
-	desc2             string //  cards[0]->card_group[i]->desc2
+	Lat               string
+	Lon               string
+	Id                string //   cards[0]->card_group[i]->user->id
+	Screen_name       string // cards[0]->card_group[i]->user->screen_name
+	Profile_image_url string // cards[0]->card_group[i]->user->pro..
+	Avatar_large      string // cards[0]->card_group[i]->user->ava...
+	Verified          bool   // cards[0]->card_group[i]->user->v
+	Desc1             string //    cards[0]->card_group[i]->desc1
+	Desc2             string //  cards[0]->card_group[i]->desc2
 }
 
 type UserInfo struct {
-	id                 string
-	screen_name        string
-	province           string
-	city               string
-	location           string
-	description        string
-	url                string
-	profile_image_url  string
-	gender             string
-	followers_count    int64
-	friends_count      int64
-	pagefriends_count  int64
-	statuses_count     int64
-	video_status_count int64
-	favourites_count   int64
-	created_at         string
-	verified           bool
-	avatar_large       string
-	avatar_hd          string
-	bi_followers_count int64
-	lang               string
+	Id                 string
+	Screen_name        string
+	Province           string
+	City               string
+	Location           string
+	Description        string
+	Url                string
+	Profile_image_url  string
+	Gender             string
+	Followers_count    int64
+	Friends_count      int64
+	Pagefriends_count  int64
+	Statuses_count     int64
+	Video_status_count int64
+	Favourites_count   int64
+	Created_at         string
+	Verified           bool
+	Avatar_large       string
+	Avatar_hd          string
+	Bi_followers_count int64
+	Lang               string
 }
 
 func SearchUser(latitude string, lontitude string, page string) ([]*User, error) {
@@ -112,15 +112,15 @@ func SearchUser(latitude string, lontitude string, page string) ([]*User, error)
 			log.Println(err)
 		}
 		users[i] = &User{
-			lat:               latitude,
-			lon:               lontitude,
-			id:                strconv.FormatInt(userID, 10),
-			screen_name:       screenName,
-			profile_image_url: profileImageUrl,
-			avatar_large:      avatarLarge,
-			verified:          verified,
-			desc1:             desc1,
-			desc2:             desc2,
+			Lat:               latitude,
+			Lon:               lontitude,
+			Id:                strconv.FormatInt(userID, 10),
+			Screen_name:       screenName,
+			Profile_image_url: profileImageUrl,
+			Avatar_large:      avatarLarge,
+			Verified:          verified,
+			Desc1:             desc1,
+			Desc2:             desc2,
 		}
 
 		i++
@@ -244,27 +244,27 @@ func RequestUserInfo(uid string) (*UserInfo, error) {
 	}
 
 	return &UserInfo{
-		id:                 id,
-		screen_name:        screen_name,
-		province:           province,
-		city:               city,
-		location:           location,
-		description:        description,
-		url:                url,
-		profile_image_url:  profile_image_url,
-		gender:             gender,
-		followers_count:    followers_count,
-		friends_count:      friends_count,
-		pagefriends_count:  pagefriends_count,
-		statuses_count:     statuses_count,
-		video_status_count: video_status_count,
-		favourites_count:   favourites_count,
-		created_at:         created_at,
-		verified:           verified,
-		avatar_large:       avatar_large,
-		avatar_hd:          avatar_hd,
-		bi_followers_count: bi_followers_count,
-		lang:               lang,
+		Id:                 id,
+		Screen_name:        screen_name,
+		Province:           province,
+		City:               city,
+		Location:           location,
+		Description:        description,
+		Url:                url,
+		Profile_image_url:  profile_image_url,
+		Gender:             gender,
+		Followers_count:    followers_count,
+		Friends_count:      friends_count,
+		Pagefriends_count:  pagefriends_count,
+		Statuses_count:     statuses_count,
+		Video_status_count: video_status_count,
+		Favourites_count:   favourites_count,
+		Created_at:         created_at,
+		Verified:           verified,
+		Avatar_large:       avatar_large,
+		Avatar_hd:          avatar_hd,
+		Bi_followers_count: bi_followers_count,
+		Lang:               lang,
 	}, nil
 
 }
